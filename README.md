@@ -12,24 +12,31 @@
 |BR-SRV          |ens192              |192.168.0.158   |/27             |192.168.0.129         |   
 
 ## 1. Настройка интерфейсов
+### Поменять "dhcp" на "static"
 ```
 mcedit /etc/net/ifaces/(интерфейс)/options
 ```
+### Настройка ipv4address
 ```
 mcedit /etc/net/ifaces/(интерфейс)/ipv4address
 ```
+### Настройка шлюза
 ```
 mcedit /etc/net/ifaces/(интерфейс)/ipv4route
 ```
+### Создание каталога
 ```
 mkdir /etc/net/ifaces/(интерфейс)
 ```
+### Копия конфы из одного интерфейса в другой
 ```
 cp /etc/net/ifaces/(интерфейс)/options /etc/net/ifaces/(интерфейс)/options
 ```
+### Перезагрузка интерфейсы
 ```
 service network restart
 ```
+### Поменять имя
 ```
 hostnamectl set-hostname (имя);exec bash
 ```
