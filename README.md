@@ -10,3 +10,26 @@
 |                |ens192              |192.168.0.129   |/27             |                      |
 |HQ-SRV          |ens192              |192.168.0.126   |/25             |192.168.0.1           |                                   
 |BR-SRV          |ens192              |192.168.0.158   |/27             |192.168.0.129         |   
+
+## 1. Настройка интерфейсов
+```
+mcedit /etc/net/ifaces/(интерфейс)/options
+```
+```
+mcedit /etc/net/ifaces/(интерфейс)/ipv4address
+```
+```
+mcedit /etc/net/ifaces/(интерфейс)/ipv4route
+```
+```
+mkdir /etc/net/ifaces/(интерфейс)
+```
+```
+cp /etc/net/ifaces/(интерфейс)/options /etc/net/ifaces/(интерфейс)/options
+```
+```
+service network restart
+```
+```
+hostnamectl set-hostname (имя);exec bash
+```
