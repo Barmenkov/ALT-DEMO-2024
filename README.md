@@ -109,7 +109,8 @@ vim /etc/frr/daemons
 ```
 systemctl enable --now frr
 ```
-### Настраиваем OSPFv2 - переходим в интерфейс frr при помощи "vtysh":
+### Настраиваем OSPFv2 - переходим в интерфейс frr при помощи "vtysh" на HQ-R:
 ![](https://github.com/Barmenkov/ALT-DEMO-2024/blob/main/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA.PNG)
-###
+### на BR-R
+![](https://github.com/Barmenkov/ALT-DEMO-2024/blob/main/2.PNG)
 ###
