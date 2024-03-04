@@ -90,8 +90,26 @@ nmcli connection modify HQ-R ip-tunnel.ttl 64
 ```
 ip r add 192.168.0.128/27 dev gre1
 ```
-## 3. 
-###
-###
+## 3. FRR
+### Установка frr
+```
+apt-get update && apt-get install -y frr
+```
+```
+vim /etc/frr/daemons
+```
+### Поменять значение
+```
+переводим ospfd=no в ospfd=yes - для OSPFv2 (IPv4)
+```
+```
+переводим ospf6d=no в ospfd6=yes - для OSPFv3 (IPv6)
+```
+### Включаем и добавляем в автозагрузку службу frr:
+```
+systemctl enable --now frr
+```
+### Настраиваем OSPFv2 - переходим в интерфейс frr при помощи "vtysh":
+
 ###
 ###
