@@ -40,3 +40,29 @@ service network restart
 ```
 hostnamectl set-hostname (имя);exec bash
 ```
+### Включил маршрутизацию
+```
+mcedit /etc/net/sysctl.conf
+```
+```
+net.ipv4.ip_forward=1
+```
+### Установка nmtui
+```
+
+```
+### Заходим в интерфейс
+```
+nmtui
+```
+### Далее (Добавить - IP tunnel)
+### HQ-R
+![Топология](https://github.com/Barmenkov/demo2024/blob/main/%D0%91%D0%B5%D0%B7%D1%8B%D0%BC%D1%8F%D0%BD%D0%BD%D1%8B%D0%B9.png)
+### BR-R
+![Топология](https://github.com/Barmenkov/demo2024/blob/main/%D0%91%D0%B5%D0%B7%D1%8B%D0%BC%D1%8F%D0%BD%D0%BD%D1%8B%D0%B92.png)
+```
+###
+###
+###
+###
+###
