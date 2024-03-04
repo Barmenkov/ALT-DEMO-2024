@@ -47,6 +47,7 @@ mcedit /etc/net/sysctl.conf
 ```
 net.ipv4.ip_forward=1
 ```
+## 2. Тунель
 ### Установка nmtui
 ```
 apt-get update && apt-get install -y NetworkManager-{daemon,tui}
@@ -89,7 +90,7 @@ nmcli connection modify HQ-R ip-tunnel.ttl 64
 ```
 ip r add 192.168.0.128/27 dev gre1
 ```
-###
+## 3. 
 ###
 ###
 ###
