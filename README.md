@@ -49,7 +49,22 @@ net.ipv4.ip_forward=1
 ```
 ### Установка nmtui
 ```
-
+apt-get update && apt-get install -y NetworkManager-{daemon,tui}
+```
+### Запускаем и добавляем в автозагрузку службу "NetworkManager"
+```
+systemctl enable --now NetworkManager
+```
+### Для того, чтобы интерфейсы стали видимы в nmtui или nmcli - необходимо поправить параметр в файле /etc/net/ifaces/<ИМЯ_ИНТЕРФЕЙСА/options
+```
+sed -i "s/NM_CONTROLLED=no/NM_CONTROLLED=yes/g" /etc/net/ifaces/ens33/options
+```
+### Перезапускаем службы "network" и "NetworkManager"
+```
+systemctl restart network
+```
+```
+systemctl restart NetworkManager
 ```
 ### Заходим в интерфейс
 ```
