@@ -114,3 +114,28 @@ systemctl enable --now frr
 ### на BR-R
 ![](https://github.com/Barmenkov/ALT-DEMO-2024/blob/main/2.PNG)
 ###
+## 3. NAT на ISP, HQ-R, BR-R
+### Установка
+```
+apt-get -y install firewalld
+```
+### Автозагрузка
+```
+systemctl enable --now firewalld
+```
+### Правило к исходящим пакетам (тот интерфейс который смотрит во внеш. сеть например на исп 192)
+```
+firewall-cmd --permanent --zone=public --add-interface=ens__
+```
+### Правило к входящим пакетам (тот интерфейс который смотрит во внутрен. сеть например на исп 224 и 256)
+```
+firewall-cmd --permanent --zone=trusted --add-interface=ens__
+```
+### Включение NAT
+```
+firewall-cmd --permanent --zone=public --add-masquerade
+```
+### Cохранение правил
+```
+firewall-cmd --reload
+```
